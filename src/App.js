@@ -2,14 +2,15 @@ import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
 
-import NavBar from './components/Navbar'
+// Cool trick to save lines by importing components from an index
+import { Navbar, Layout, Footer } from './components'
 
 const app = () => {
     return (
         <div>
             <div className="app">
                 <div className="navbar">
-                    
+                    <Navbar />
                 </div>
                 <div className="main">
 
