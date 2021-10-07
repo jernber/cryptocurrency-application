@@ -2,8 +2,8 @@ import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
 
-// Cool trick to save lines by importing components from an index
-import { Navbar, Layout, Footer } from './components'
+// Cool trick to save lines by importing components from an index of components
+import { Navbar } from './components'
 
 const app = () => {
     return (
