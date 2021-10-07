@@ -4,6 +4,7 @@ import { Layout, Typography, Space } from 'antd'
 
 // Cool trick to save lines by importing components from an index of components
 import { Navbar } from './components'
+import './App.css'
 
 const app = () => {
     return (
