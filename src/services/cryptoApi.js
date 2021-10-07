@@ -7,6 +7,7 @@ const cryptoApiHeaders = {
 const createRequest = (url) => ({ url, headers: cryptoApiHeaders})
 const baseUrl = 'https://coinranking1.p.rapidapi.com/exchanges'
 
+// This functions calls on Coinranking API to get exchange rates of cryptocurrencies
 export const cryptoApi = createApi({
     reducerPath: 'cryptoApi',
     baseQuery: fetchBaseQuery({ baseUrl }),
