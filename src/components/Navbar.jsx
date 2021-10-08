@@ -6,8 +6,8 @@ import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOut
 import icon from '../images/cryptocurrency.png'
 
 const Navbar = () => {
-    const [activeMenu, setactiveMenu] = useState(true)
-    const [secreenSize, setSecreenSize] = useState(null)
+    const [activeMenu, setActiveMenu] = useState(true)
+    const [screenSize, setSecreenSize] = useState(null)
 
     useEffect(()=> {
         const handleResize = () => setSecreenSize(window.innerWidth)
@@ -19,11 +19,11 @@ const Navbar = () => {
 
     useEffect(() => {
         if(screenSize < 768){
-            setactiveMenu = false
+            setActiveMenu(false)
         }else{
-            setactiveMenu = true
+            setActiveMenu(true)
         }
-    }, [secreenSize])
+    }, [screenSize])
 
     return (
         <div className="nav-container">
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <Typography.Title level={2} className="logo">
                     <Link to="/">CryptoCave</Link>
                 </Typography.Title>
-                <Button className="menu-control-container" onClick={() => setactiveMenu(true)}>
+                <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}>
                 <MenuOutlined /></Button>
                 </div>
                 {activeMenu && (
