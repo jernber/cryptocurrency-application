@@ -5,6 +5,7 @@ import millify from 'millify'
 import { Col, Row, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
+import { useGetCryptoDetailsQuery } from '../service'
 const { Title, Text } = Typography
 const { Option } = Select 
 const Homepage = () => {
