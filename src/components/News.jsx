@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Select, Typography, Row, Col, Avatar, Card } from 'antd'
 import moment from 'moment'
 
@@ -10,12 +10,27 @@ const { Option } = Select
 const demoImage = 'https://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg'
 
 const News = ({ simplified }) => {
-    const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory: 'Cryptocurrency', count: simplified ? 6 : 12 })
+    const [newsCategory, setnewsCategory] = useState('Cryptocurrency')
+    const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory: newsCategory, count: simplified ? 6 : 12 })
     
     if(!cryptoNews?.value) return 'Loading...'
 
     return (
         <Row gutter={[24, 24]}>
+            {!simplified && (
+                <Col span={24}>
+                    <Select
+                        showSearch
+                        className="select-news"
+                        placeholder="Select a Crypto"
+                        optionFilterProp="children"
+                        onChange={(value) => console.log(value)}
+                        filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}    
+                    >
+
+                    </Select>
+                </Col>
+            )}
             {cryptoNews.value.map((news, i) => (
                 <Col xs={24} sm={12} lg={8} key={i}>
                     <Card hoverable className="news-card">
